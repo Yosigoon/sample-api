@@ -39,7 +39,7 @@ public class SampleController {
     public String getList(@Valid SampleListVo sampleListVo, BindingResult bindingResult, HttpServletRequest request) throws GlobalException {
         DalbitUtil.throwValidaionException(bindingResult, Thread.currentThread().getStackTrace()[1].getMethodName());
         P_SampleListVo apiData = new P_SampleListVo(sampleListVo, request);
-        String result = sampleService.callMailboxList(apiData);
+        String result = sampleService.callList(apiData);
         return result;
     }
 }
